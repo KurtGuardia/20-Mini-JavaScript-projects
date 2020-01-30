@@ -7,6 +7,9 @@ const ctx = canvas.getContext("2d");
 
 let score = 0;
 
+const brickRowCount = 9;
+const brickColumnCount = 5;
+
 //Create ball props
 const ball = {
   x: canvas.width / 2,
@@ -36,6 +39,27 @@ function drawPaddle() {
   ctx.closePath();
 }
 
+//Create brick props
+const brickInfo = {
+  w: 70,
+  h: 20,
+  padding: 10,
+  offsetX: 45,
+  offsetY: 60,
+  visible: true,
+};
+
+//Create the bricks
+const bricks = [];
+for (let i = 0; i < brickRowCount; i++) {
+  bricks[i] = [];
+  for (let j = 0; j < brickColumnCount; j++) {
+    const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX;
+    const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY;
+    bricks[i][j] = { x, y, ...brickInfo };
+  }
+}
+
 //Draw ball on canvas
 function drawBall() {
   ctx.beginPath();
@@ -45,17 +69,33 @@ function drawBall() {
   ctx.closePath();
 }
 
+//Draw score  on canvas
+function drawScore() {
+  ctx.font = "20px Arial";
+  ctx.fillText(`Score: ${score}`, canvas.width - 100, 30);
+}
+
+//draw bricks on canvas
+function drawBricks() {
+  bricks.forEach((column) => {
+    column.forEach((brick) => {
+      ctx.beginPath();
+      ctx.rect(brick.x, brick.y, brick.w, brick.h);
+      ctx.fillStyle = brick.visible ? "#fff" : "transparent";
+      ctx.fill();
+      ctx.closePath();
+    });
+  });
+}
+
+console.log(bricks)
+
 //Draw everything
 function draw() {
   drawPaddle();
   drawBall();
   drawScore();
-}
-
-//Draw score  on canvas
-function drawScore(){    
-    ctx.font = '20px Arial';
-    ctx.fillText(`Score: ${score}`, canvas.width -100, 30);
+  drawBricks();
 }
 
 draw();
