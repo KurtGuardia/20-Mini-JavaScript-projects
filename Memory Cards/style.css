@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +18,9 @@ body {
 }
 
 h1 {
+  color: wheat;
   position: relative;
+  padding: 50px;
 }
 
 h1 button {
@@ -29,7 +31,7 @@ h1 button {
 }
 
 .btn {
-  background-color: #fff;
+  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
   border: 1px solid #aaa;
   border-radius: 3px;
   cursor: pointer;
@@ -92,16 +94,16 @@ h1 button {
   width: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform .5s ease;
+  transition: transform 2s ease;
 }
 
-.card.show-answer .inner-card{
-    transform: rotateX(180deg);
+.card.show-answer .inner-card {
+  transform: rotateX(180deg);
 }
 
 .inner-card-front,
 .inner-card-back {
-    backface-visibility: hidden;
+  backface-visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -110,82 +112,82 @@ h1 button {
   justify-content: center;
   height: 100%;
   width: 100%;
-  background: #fff;
+  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
 }
 
-.inner-card-front{
-    transform: rotateX(0deg);
-    z-index: 2;
+.inner-card-front {
+  transform: rotateX(0deg);
+  z-index: 2;
 }
 
-.inner-card-back{
-    transform: rotateX(180deg);
+.inner-card-back {
+  transform: rotateX(180deg);
 }
 
 .inner-card-front::after,
-.inner-card-back::after{
-    content: '\f021  Flip';
-    font-family: 'Font Awesome 5 Free', 'Lato', sans-serif;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    color: #ddd;
+.inner-card-back::after {
+  content: "\f021  Flip";
+  font-family: "Font Awesome 5 Free", "Lato", sans-serif;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ddd;
 }
 
-.navigation{
-    display: flex;
-    margin: 20px 0;
+.navigation {
+  display: flex;
+  margin: 20px 0;
 }
 
-.navigation .nav-button{
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: 16px;
+.navigation .nav-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .navigation p {
-    margin: 0 25px;
+  margin: 0 25px;
 }
 
-.add-container{
-    opacity: 0;
-    z-index: -1;
-    background-color: #f0f0f0;
-    border-top: 2px solid #eee;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    transition: .3 ease;
+.add-container {
+  opacity: 0;
+  z-index: -1;
+  background-color: #f0f0f0;
+  border-top: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transition: 0.3 ease;
 }
 
-.add-container.show{
-    opacity: 1;
-    z-index: 2;
+.add-container.show {
+  opacity: 1;
+  z-index: 2;
 }
 
-.add-container h3{
-    margin: 10px 0;
+.add-container h3 {
+  margin: 10px 0;
 }
 
-.form-group label{
-    display: block;
-    margin: 20px 0 10px;
+.form-group label {
+  display: block;
+  margin: 20px 0 10px;
 }
 
-.form-group textarea{
-    border: 1px solid #aaa;
-    border-radius: 3px;
-    font-size: 16px;
-    padding: 12px;
-    min-height: 500px;
-    max-width: 100%;
+.form-group textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px;
+  min-height: 500px;
+  max-width: 100%;
 }
