@@ -70,7 +70,7 @@ function createBox(item){
     box.classList.add('box');
     box.innerHTML = `
         <img src="${image}" alt="${text}" />
-        <p class="info"> ${text} >/p>
+        <p class="info"> ${text} </p>
     `;
 
     // @todo - speak event
