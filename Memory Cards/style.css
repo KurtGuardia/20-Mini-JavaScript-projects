@@ -155,8 +155,7 @@ h1 button {
 .add-container {
   opacity: 0;
   z-index: -1;
-  background-color: #f0f0f0;
-  border-top: 2px solid #eee;
+  background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);  border-top: 2px solid #eee;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,7 +165,7 @@ h1 button {
   top: 0;
   bottom: 0;
   width: 100%;
-  transition: 0.3 ease;
+  transition: 0.5s ease;
 }
 
 .add-container.show {
@@ -188,6 +187,6 @@ h1 button {
   border-radius: 3px;
   font-size: 16px;
   padding: 12px;
-  min-height: 500px;
+  max-height: 500px;
   max-width: 100%;
 }
