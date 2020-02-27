@@ -9,7 +9,7 @@ let page = 1;
 //fetch response
 async function getPost() {
   const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page${page}`
+    `https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`
   );
 
   const data = await res.json();
@@ -24,12 +24,13 @@ async function showPost() {
   post.forEach((post) => { console.log(post.id)
     const postEl = document.createElement("div");
     postEl.classList.add("post");
-    postEl.innerHTML = `<div class="number">${post.id}</div>
-        <div class="post-info">
-            <h3 class="post-title">${post.title}</h3>
-            <p class="post-body">${post.body}</p>
-        </div>
-        `;
+    postEl.innerHTML = `
+    <div class="number">${post.id}</div>
+    <div class="post-info">
+      <h2 class="post-title">${post.title}</h2>
+      <p class="post-body">${post.body}</p>
+    </div>
+  `;
 
     postContainer.appendChild(postEl);
   });
