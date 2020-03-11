@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-  color: #fff;
+  color: rgb(121, 107, 248);
 }
 
 .screen {
@@ -55,7 +55,7 @@ h1 {
     color: #dc3545;
 }
 
-.controls .fa-play{
+.controls .fa-pause{
     color: rgb(156, 237, 245);
 }
 
