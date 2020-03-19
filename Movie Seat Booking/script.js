@@ -34,13 +34,18 @@ function populateUI() {
           }
       })
   }
+
+  const selectedMovieindex = localStorage.getItem('selectedMovieIndex');
+  if(selectedMovieindex !== null) {
+      movieSelect.selectedIndex = selectedMovieItem;
+  }
 }
 
 //Event listener movie select
 movieSelect.addEventListener("change", (e) => {
   ticketPrice = +e.target.value;
+  setMovieData(e.target.selectedIndex, e.target.value);
   updateSelectedCount();
-  setMovieData();
 });
 
 //Event listener seat click event
@@ -54,3 +59,6 @@ container.addEventListener("click", (e) => {
     updateSelectedCount();
   }
 });
+
+//Initial count and total set
+updateSelectedCount();
