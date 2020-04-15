@@ -23,7 +23,7 @@ body {
 
 .container {
   display: flex;
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: 100%;
   width: 800px;
 }
@@ -50,6 +50,10 @@ button {
 main {
   flex: 1;
   padding: 10px 20px;
+}
+
+h1{
+    margin-top: 30px;
 }
 
 h2 {
