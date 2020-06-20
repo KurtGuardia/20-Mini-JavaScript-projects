@@ -20,7 +20,10 @@ function showSuccess(input) {
 }
 
 //Check if email is valid
-function isValidEmail
+function isValidEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
 
 /*______ Listening the submision or the form_____*/
 form.addEventListener("submit", function (e) {
@@ -34,6 +37,8 @@ form.addEventListener("submit", function (e) {
 
   if (email.value === "") {
     showError(email, "email is required");
+  } else if(!isValidEmail(email.value)){
+    showError(email, 'Email is not valid');
   } else {
     showSuccess(email);
   }
