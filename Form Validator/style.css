@@ -12,8 +12,7 @@
 }
 
 body {
-  background-color: #f9fafb;
-  font-family: "Open Sans", sans-serif;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);  font-family: "Open Sans", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,8 +20,7 @@ body {
 }
 
 .container {
-  background-color: #fff;
-  border-radius: 5px;
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);  border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   width: 400px;
 }
@@ -49,7 +47,7 @@ h2 {
 }
 
 .form-control input {
-  border: 2px solid #f0f0f0;
+  border: 3px solid #f0f0f0;
   border-radius: 4px;
   display: block;
   width: 100%;
