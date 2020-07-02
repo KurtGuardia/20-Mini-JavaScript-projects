@@ -9,25 +9,24 @@ const amount = document.getElementById("amount");
 
 const dummytransactions = [
   { id: 1, text: "Flower", amount: -20 },
-  { id: 1, text: "Salary", amount: 300 },
-  { id: 1, text: "Book", amount: -10 },
-  { id: 1, text: "Camera", amount: 150 },
+  { id: 2, text: "Salary", amount: 300 },
+  { id: 3, text: "Book", amount: -10 },
+  { id: 4, text: "Camera", amount: 150 },
 ];
 
 let transactions = dummytransactions;
-
 
 //add transaction
 function addTransaction(e) {
   e.preventDefault();
 
-  if(text.value.trim()==='' || amount.value.trim() === ''){
-    alert('Please enter a text and amount');
+  if (text.value.trim() === "" || amount.value.trim() === "") {
+    alert("Please enter a text and amount");
   } else {
     const transaction = {
       id: generateID(),
       text: text.value,
-      amount: +amount.value
+      amount: +amount.value,
     };
 
     transactions.push(transaction);
@@ -36,14 +35,14 @@ function addTransaction(e) {
 
     updateValues();
 
-    text.value = '';
-    amount.value = '';
+    text.value = "";
+    amount.value = "";
   }
 }
 
 //Generate random ID
 function generateID() {
-  return Math.floor(Math.random() * 100000000)
+  return Math.floor(Math.random() * 100000000);
 }
 //Add transactions to DOM list
 function addTransactionDOM(transaction) {
@@ -57,7 +56,9 @@ function addTransactionDOM(transaction) {
 
   item.innerHTML = `
     ${transaction.text} <span>${sign}${Math.abs(transaction.amount)}</span>
-    <button class="delete-btn"></button>
+    <button class="delete-btn" onclick="removeTransaction(${
+      transaction.id
+    })">x</button>
   `;
 
   list.appendChild(item);
@@ -74,15 +75,21 @@ function updateValues() {
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
 
-  const expense = (amounts
-    .filter((item) => item < 0)
-    .reduce((acc, item) => (acc += item), 0) * -1)
-    .toFixed(2);
+  const expense = (
+    amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
+    -1
+  ).toFixed(2);
 
-    balance.innerText = `$${total}`;
-    money_plus.innerText = `$${income}`;
-    money_minus.innerText = `$${expense}`;
+  balance.innerText = `$${total}`;
+  money_plus.innerText = `$${income}`;
+  money_minus.innerText = `$${expense}`;
+}
 
+//Remove transaction by id
+function removeTransaction(id) {
+  transactions = transactions.filter((transaction) => transaction.id !== id);
+
+  init();
 }
 
 //Init App
@@ -95,4 +102,4 @@ function init() {
 
 init();
 
-form.addEventListener('submit', addTransaction)
+form.addEventListener("submit", addTransaction);
