@@ -11,8 +11,7 @@
 }
 
 body {
-  background-color: #f7f7f7;
-  display: flex;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -30,6 +29,10 @@ h1 {
   margin: 0;
 }
 
+h2{
+    margin-top: 30px;
+}
+
 h3 {
   border-bottom: 1px solid #bbb;
   padding-bottom: 10px;
@@ -42,8 +45,7 @@ h4 {
 }
 
 .inc-exp-container {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);  box-shadow: var(--box-shadow);
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -56,7 +58,7 @@ h4 {
 }
 
 .inc-exp-container > div:first-of-type {
-  border: 1px solid #dedede;
+  border: 1px solid #dedede;  
 }
 
 .money {
@@ -80,6 +82,7 @@ label {
 
 input[type="text"],
 input[type="number"] {
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   border: 1px solid #dedede;
   border-radius: 2px;
   display: block;
@@ -113,8 +116,7 @@ input[type="number"] {
 }
 
 .list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);  box-shadow: var(--box-shadow);
   color: #333;
   display: flex;
   justify-content: space-between;
