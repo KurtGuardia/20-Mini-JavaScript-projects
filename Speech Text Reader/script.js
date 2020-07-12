@@ -135,11 +135,10 @@ closeBtn.addEventListener("click", () =>
 voiceSelect.addEventListener("change", setVoice);
 
 // Read text button
-readBtn.addEventListener('click', () => {
-    setTextMessage(textarea.value);
-    speakText();
-  });
+readBtn.addEventListener("click", () => {
+  setTextMessage(textarea.value);
+  speakText();
+});
 
-  
 getVoices();
 //MIO
