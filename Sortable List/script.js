@@ -44,4 +44,22 @@ function createList() {
 
       draggable_list.appendChild(listItem);
     });
+
+  addEventListeners();
+}
+
+function addEventListeners() {
+  const draggables = document.querySelectorAll('.draggable');
+  const dragListItems = document.querySelectorall('.draggable-list li');
+
+  draggables.forEach((dragabble) => {
+    dragabble.addEventListener('dragstart', dragStart);
+  });
+
+  dragListItems.forEach((items) => {
+    item.addEventListener('dragover', dragOver);
+    item.addEventListener('drop', dragDrop);
+    item.addEventListener('dragenter', dragEnter);
+    item.addEventListener('dragleave', dragLeave);
+  });
 }
