@@ -93,7 +93,6 @@ function checkOrder() {
     if (personName !== richestPeople[index]) {
       listItem.classList.add('wrong');
     } else {
-      console.log('here');
       listItem.classList.remove('wrong');
       listItem.classList.add('right');
     }
